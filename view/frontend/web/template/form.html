@@ -1,0 +1,18 @@
+<form data-bind="submit: submit">
+    <fieldset class="fieldset">
+        <div class="field">
+            <label for="todo_add" class="label" data-bind="i18n: 'Enter your action'"/>
+            <div class="control">
+                <input id="todo_add" type="text"
+                       data-bind="
+                           textInput: textInput,
+                           attr: { placeholder: $t('Enter your action') }
+                       "
+                />
+            </div>
+        </div>
+    </fieldset>
+    <button class="action primary">
+        <span data-bind="i18n: 'Add'"/>
+    </button>
+</form>

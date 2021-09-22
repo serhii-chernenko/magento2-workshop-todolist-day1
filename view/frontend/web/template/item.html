@@ -1,0 +1,24 @@
+<li>
+    <label data-bind="attr: { for: `status_${item.id}` }">
+        <input type="checkbox"
+               data-bind="checked: itemStatus, attr: { id: `status_${item.id}` }"
+        />
+    </label>
+    <!-- ko if: editState -->
+        <input type="text"
+               data-bind="
+                   textInput: textInput,
+                   hasFocus: editState,
+                   event: { blur: onTextUpdated },
+                   keyboard: {
+                    13: onTextUpdated
+                   }
+               "/>
+    <!-- /ko -->
+    <!-- ko ifnot: editState -->
+        <span data-bind="text: textInput, click: function () { editState = true }"/>
+    <!-- /ko -->
+    <button class="action secodary" data-bind="click: remove">
+        <span data-bind="i18n: 'Remove'"/>
+    </button>
+</li>

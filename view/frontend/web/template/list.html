@@ -1,0 +1,14 @@
+<!-- ko if: elems().length -->
+    <ul>
+        <!-- ko foreach: elems -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!-- /ko -->
+    </ul>
+<!-- /ko -->
+<!-- ko ifnot: elems().length -->
+    <div class="messages">
+        <div class="message warning">
+            <span data-bind="i18n: 'Your list is empty!'"/>
+        </div>
+    </div>
+<!-- /ko -->
